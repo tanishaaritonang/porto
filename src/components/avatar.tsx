@@ -7,7 +7,7 @@ interface AvatarProps {
   className?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ src, alt = 'Avatar', fallback, className = '' }) => {
+const Avatar: React.FC<React.PropsWithChildren<AvatarProps>> = ({ src, alt = 'Avatar', fallback, className = '', children }) => {
   return (
     <div className={`relative h-10 w-10 overflow-hidden rounded-full ${className}`}>
       {src ? (
@@ -18,7 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt = 'Avatar', fallback, classNam
         />
       ) : (
         <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
-          {fallback || '?'}
+          {children || fallback || '?'}
         </div>
       )}
     </div>
