@@ -254,14 +254,14 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex flex-wrap gap-4"
               >
-                <Button variant="primary" className="flex items-center gap-2" aria-label="Send email">
+                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                   <Mail size={20} aria-hidden="true" />
                   Contact Me
-                </Button>
-                <Button variant="outline" className="flex items-center gap-2" aria-label="Visit LinkedIn profile">
+                </a>
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-md text-sm font-medium transition-colors">
                   <Linkedin size={20} aria-hidden="true" />
                   LinkedIn
-                </Button>
+                </a>
                 <a href="/cv.pdf" download="Tanisha_Natalia_Aritonang_CV.pdf" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                   <Download size={20} aria-hidden="true" />
                   Download CV

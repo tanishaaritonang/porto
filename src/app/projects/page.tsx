@@ -17,6 +17,13 @@ const Projects = () => {
       link: "#"
     },
     {
+      title: "Adaptive Learning System with DeepSeek R1:8B",
+      period: "08/2024 – 10/2024",
+      description: "Built an adaptive learning platform leveraging the DeepSeek R1:8B model fine-tuned using LoRA on Hugging Face. Integrated model inference via Ollama and managed the backend with PostgreSQL. The system was containerized using Docker for modular deployment and scalability, with a Next.js frontend delivering dynamic and personalized learning experiences.",
+      technologies: ["Next.js", "PostgreSQL", "Docker", "Ollama", "DeepSeek R1:8B", "Hugging Face", "LoRA"],
+      link: "#"
+    },
+    {
       title: "Automatic Laundry System – Embedded IoT Project",
       period: "11/2024 – 12/2024",
       description: "Designed an embedded system with sensors (LDR, rain, servo, fan) for weather-adaptive automation. Integrated with IoT principles for remote monitoring potential.",
@@ -37,6 +44,7 @@ const Projects = () => {
       technologies: ["Docker", "Kubernetes", "Microservices", "DevOps"],
       link: "#"
     },
+
   ];
 
   return (
@@ -45,7 +53,7 @@ const Projects = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -84,15 +92,15 @@ const Projects = () => {
               <h1 className="text-3xl font-bold text-foreground">Projects</h1>
               <div className="h-px bg-border flex-grow"></div>
             </div>
-            
+
             <p className="text-lg text-foreground mb-12 max-w-3xl">
-              Here are some of my recent projects that showcase my skills in cloud computing, 
+              Here are some of my recent projects that showcase my skills in cloud computing,
               infrastructure automation, and software development.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -117,9 +125,9 @@ const Projects = () => {
                         ))}
                       </div>
                       <div className="mt-auto">
-                        <Button 
-                          variant="ghost" 
-                          size="sm" 
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           className="p-0 h-auto flex items-center gap-1 text-primary hover:text-primary/90 text-sm font-medium"
                         >
                           View Project <ExternalLink size={14} />

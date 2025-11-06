@@ -10,7 +10,7 @@ const Skills = () => {
   const skills = {
     "Cloud Platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"],
     "Infrastructure & DevOps": ["Docker", "Kubernetes", "Terraform", "Ansible", "CI/CD (GitHub Actions, Jenkins)"],
-    "Programming & Scripting": ["Python", "Bash", "PowerShell", "HTML, CSS, JavaScript, TypeScript"],
+    "Programming & Scripting": ["Python", "Bash", "PowerShell", "HTML", "CSS", "JavaScript", "TypeScript"],
     "System & Network": ["Linux Administration", "Networking (VPC, DNS, Load Balancing)", "Security (IAM, SSL/TLS)"],
     "Monitoring & Automation": ["CloudWatch", "Prometheus", "Grafana"],
     "AI & Integration": ["OpenAI API", "Serverless Functions (AWS Lambda, Cloud Functions)"]
