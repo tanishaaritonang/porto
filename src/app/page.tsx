@@ -2,13 +2,13 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Linkedin, 
-  MapPin, 
-  GraduationCap, 
-  Briefcase, 
-  Code, 
+import {
+  Mail,
+  Linkedin,
+  MapPin,
+  GraduationCap,
+  Briefcase,
+  Code,
   Award,
   ExternalLink,
   Download
@@ -27,9 +27,9 @@ const Portfolio = () => {
   const profile = {
     name: "Tanisha Natalia Aritonang",
     title: "Computer Engineering Undergraduate | Aspiring Cloud Engineer",
-    email: "tanishanatrng@gmail.com",
+    email: "tanishaartng@gmail.com",
     location: "Medan",
-    linkedin: "linkedin.com/in/tanisha-natalia-aritonang-99763a263"
+    linkedin: "https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a"
   };
 
   const experiences = [
@@ -124,7 +124,7 @@ const Portfolio = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border" role="navigation" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -156,7 +156,7 @@ const Portfolio = () => {
               <ThemeToggle />
             </div>
             <div className="md:hidden">
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-gray-600 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
                 aria-expanded={mobileMenuOpen}
@@ -174,10 +174,10 @@ const Portfolio = () => {
               </button>
             </div>
           </div>
-          
+
           {/* Mobile menu */}
           {mobileMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -197,9 +197,8 @@ const Portfolio = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
-                      activeSection === item ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-500 hover:bg-gray-50'
-                    }`}
+                    className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === item ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-500 hover:bg-gray-50'
+                      }`}
                     role="menuitem"
                     aria-label={`Navigate to ${item} section`}
                   >
@@ -224,7 +223,7 @@ const Portfolio = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -232,7 +231,7 @@ const Portfolio = () => {
               >
                 {profile.name}
               </motion.h1>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
@@ -240,13 +239,13 @@ const Portfolio = () => {
               >
                 {profile.title}
               </motion.h2>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-lg text-gray-600 mb-8 max-w-lg"
               >
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation. 
+                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation.
                 Passionate about designing and managing scalable, secure, and efficient cloud-based systems.
               </motion.p>
               <motion.div
@@ -263,10 +262,10 @@ const Portfolio = () => {
                   <Linkedin size={20} aria-hidden="true" />
                   LinkedIn
                 </Button>
-                <Button variant="ghost" className="flex items-center gap-2 border border-gray-300" aria-label="Download CV">
+                <a href="/cv.pdf" download="Tanisha_Natalia_Aritonang_CV.pdf" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                   <Download size={20} aria-hidden="true" />
                   Download CV
-                </Button>
+                </a>
               </motion.div>
             </motion.div>
             <motion.div
@@ -277,14 +276,19 @@ const Portfolio = () => {
               aria-label={`${profile.name}'s profile picture`}
             >
               <div className="relative">
-                <Avatar className="w-64 h-64 md:w-80 md:h-80" aria-label={`${profile.name}'s profile picture`}>
+                <Avatar
+                  src="/foto.jpeg"
+                  alt={`${profile.name}'s profile picture`}
+                  className="w-64 h-64 md:w-80 md:h-80"
+                >
                   <AvatarFallback>
                     <div className="bg-gray-200 w-full h-full rounded-full flex items-center justify-center">
                       <span className="text-5xl text-gray-400">TNA</span>
                     </div>
                   </AvatarFallback>
                 </Avatar>
-                <motion.div 
+
+                <motion.div
                   className="absolute -bottom-2 -right-2 bg-blue-600 rounded-full p-2"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
@@ -335,8 +339,8 @@ const Portfolio = () => {
             </div>
             <div className="mt-8">
               <p className="text-lg text-foreground leading-relaxed">
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation. 
-                Passionate about designing and managing scalable, secure, and efficient cloud-based systems. 
+                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation.
+                Passionate about designing and managing scalable, secure, and efficient cloud-based systems.
                 Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.
               </p>
             </div>
@@ -359,7 +363,7 @@ const Portfolio = () => {
             </div>
             <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -406,7 +410,7 @@ const Portfolio = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -453,7 +457,7 @@ const Portfolio = () => {
               <h2 className="text-3xl font-bold text-foreground">Skills</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Technical Skills</h3>
@@ -463,8 +467,8 @@ const Portfolio = () => {
                       <h4 className="font-medium text-foreground mb-2">{category}</h4>
                       <div className="flex flex-wrap gap-2">
                         {skillList.map((skill, i) => (
-                          <span 
-                            key={i} 
+                          <span
+                            key={i}
                             className="text-sm bg-card text-foreground px-3 py-1 rounded-full border border-border"
                           >
                             {skill}
@@ -475,20 +479,20 @@ const Portfolio = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-4">Soft Skills</h3>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {softSkills.map((skill, index) => (
-                    <span 
-                      key={index} 
+                    <span
+                      key={index}
                       className="text-sm bg-card text-foreground px-3 py-1 rounded-full border border-border"
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-                
+
                 <h3 className="text-xl font-semibold text-foreground mb-4">Certifications</h3>
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
                   {certifications.map((cert, index) => (
@@ -518,7 +522,7 @@ const Portfolio = () => {
             </div>
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -538,7 +542,7 @@ const Portfolio = () => {
                   </Card>
                 </motion.div>
               ))}
-              
+
               <div className="pt-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">Languages</h3>
                 <div className="flex flex-wrap gap-4">
@@ -570,16 +574,33 @@ const Portfolio = () => {
                 Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
               </p>
             </div>
-            
-            <form className="space-y-6">
+
+            <form 
+              className="space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const target = e.target as HTMLFormElement;
+                const formData = new FormData(target);
+                const name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                const subject = formData.get('subject') as string;
+                const message = formData.get('message') as string;
+                
+                // Send email using mailto link
+                const mailtoLink = `mailto:tanishaartng@gmail.com?subject=${encodeURIComponent(subject + ' from ' + name + ' (' + email + ')')}&body=${encodeURIComponent(message + '\n\nSent from portfolio website')}`;
+                window.location.href = mailtoLink;
+              }}
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Name</label>
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 <div>
@@ -587,8 +608,10 @@ const Portfolio = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
               </div>
@@ -597,21 +620,25 @@ const Portfolio = () => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
                   placeholder="How can I help you?"
+                  required
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
                   placeholder="Your message here..."
+                  required
                 ></textarea>
               </div>
               <div className="pt-4">
-                <Button variant="primary" className="w-full md:w-auto px-8 py-3">
+                <Button variant="primary" className="w-full md:w-auto px-8 py-3" type="submit">
                   Send Message
                 </Button>
               </div>

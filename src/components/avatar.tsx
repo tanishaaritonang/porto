@@ -8,13 +8,16 @@ interface AvatarProps {
 }
 
 const Avatar: React.FC<React.PropsWithChildren<AvatarProps>> = ({ src, alt = 'Avatar', fallback, className = '', children }) => {
+  const [hasError, setHasError] = React.useState(false);
+
   return (
-    <div className={`relative h-10 w-10 overflow-hidden rounded-full ${className}`}>
-      {src ? (
+    <div className={`relative overflow-hidden rounded-full ${className}`}>
+      {src && !hasError ? (
         <img 
           src={src} 
           alt={alt} 
           className="w-full h-full object-cover"
+          onError={() => setHasError(true)}
         />
       ) : (
         <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">

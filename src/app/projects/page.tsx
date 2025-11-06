@@ -12,8 +12,8 @@ const Projects = () => {
     {
       title: "CurioKids – Question-Answering Chatbot",
       period: "04/2025 – 05/2025",
-      description: "Developed a chatbot using OpenAI, LangChain, and Supabase to deliver analogy-based responses. Deployed on a cloud environment for scalable performance.",
-      technologies: ["OpenAI", "LangChain", "Supabase", "Cloud Deployment"],
+      description: "Deployed chatbot on a cloud-based backend using Supabase and LangChain, integrating OpenAI API. Configured environment with Docker and GitHub Actions for automated testing and deployment.",
+      technologies: ["OpenAI", "LangChain", "Supabase", "Cloud Deployment", "JavaScript"],
       link: "#"
     },
     {
@@ -31,26 +31,12 @@ const Projects = () => {
       link: "#"
     },
     {
-      title: "AI-Powered Cloud Infrastructure Monitor",
-      period: "07/2024 – 09/2024",
-      description: "Created a monitoring solution using AI to predict infrastructure issues and automatically scale resources based on demand patterns.",
-      technologies: ["AI/ML", "Cloud Monitoring", "Predictive Analytics", "Auto-scaling"],
-      link: "#"
-    },
-    {
       title: "Containerized Microservices Architecture",
       period: "05/2024 – 07/2024",
       description: "Designed and deployed a containerized microservices application using Docker and Kubernetes for improved scalability and maintainability.",
       technologies: ["Docker", "Kubernetes", "Microservices", "DevOps"],
       link: "#"
     },
-    {
-      title: "Automated Security Compliance Checker",
-      period: "03/2024 – 05/2024",
-      description: "Developed a tool to automatically scan cloud infrastructure for security vulnerabilities and compliance issues according to industry standards.",
-      technologies: ["Security", "Compliance", "Automation", "Cloud Security"],
-      link: "#"
-    }
   ];
 
   return (

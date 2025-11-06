@@ -112,7 +112,7 @@ const About = () => {
               <div className="lg:col-span-1">
                 <div className="sticky top-32">
                   <div className="flex flex-col items-center text-center">
-                    <Avatar className="w-48 h-48 mb-6">
+                    <Avatar src="/foto.jpeg" alt={`${profile.name}'s profile picture`} className="w-48 h-48 mb-6">
                       <AvatarFallback>
                         <div className="bg-gray-200 w-full h-full rounded-full flex items-center justify-center">
                           <span className="text-5xl text-gray-400">TNA</span>
