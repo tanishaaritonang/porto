@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
+  Phone,
   Linkedin,
   MapPin,
   GraduationCap,
@@ -26,90 +27,132 @@ const Portfolio = () => {
   // Data from the resume
   const profile = {
     name: "Tanisha Natalia Aritonang",
-    title: "Computer Engineering Undergraduate | Aspiring Cloud Engineer",
+    title: "Computer Technology Student | Frontend & Full-Stack Web Developer | AI Enthusiast | DevOps Practitioner",
     email: "tanishaartng@gmail.com",
-    location: "Medan",
-    linkedin: "https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a"
+    location: "Medan, North Sumatera",
+    linkedin: "https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a",
+    phone: "081396700208"
   };
 
   const experiences = [
     {
-      title: "Cloud & Infrastructure Enthusiast",
-      company: "HIMATEK (Computer Engineering Association)",
-      period: "09/2024 – Present",
+      title: "Matriculation Assistant",
+      company: "Institut Teknologi Del",
+      period: "August 2024",
       description: [
-        "Assisted in implementing cloud-based tools for academic projects and events.",
-        "Supported deployment and automation initiatives for internal activities.",
-        "Promoted awareness of cloud technology within the student community."
+        "Assisted in facilitating matriculation for ~500 new students.",
+        "Supported academic sessions, attendance, and classroom coordination.",
+        "Taught introductory programming and digital literacy (Microsoft Word, etc.)."
       ]
     },
     {
-      title: "Matriculation Assistant",
+      title: "Vice Chair of KPU HIMATEK",
       company: "Institut Teknologi Del",
-      period: "08/2024 – 08/2024",
+      period: "September 2025",
       description: [
-        "Supported academic sessions for ~500 students, ensuring smooth operations.",
-        "Assisted with technical setup, basic programming, and digital literacy workshops.",
-        "Collaborated with lecturers to coordinate academic resources efficiently."
+        "Assisted the Chair in leading the Election Commission of HIMATEK.",
+        "Organized and supervised the student election process.",
+        "Ensured fairness, transparency, and documentation integrity."
+      ]
+    }
+  ];
+
+  const organizations = [
+    {
+      title: "Leader of Education Division",
+      organization: "HIMATEK – Institut Teknologi Del",
+      period: "August 2025 – Present",
+      description: [
+        "Coordinated training programs, workshops, and academic development.",
+        "Designed initiatives to improve technical and academic performance."
+      ]
+    },
+    {
+      title: "Leader of Competition Division",
+      organization: "HIMATEK – Institut Teknologi Del",
+      period: "August 2024 – Present",
+      description: [
+        "Organized technical workshops and collaboration with lecturers.",
+        "Mentored junior members and promoted continuous learning."
       ]
     }
   ];
 
   const projects = [
     {
-      title: "CurioKids – Question-Answering Chatbot",
-      period: "04/2025 – 05/2025",
-      description: "Developed a chatbot using OpenAI, LangChain, and Supabase to deliver analogy-based responses. Deployed on a cloud environment for scalable performance.",
-      technologies: ["OpenAI", "LangChain", "Supabase", "Cloud Deployment"]
+      title: "AI-Supported Adaptive Learning System for Computer Networks",
+      period: "2025",
+      description: "Developed adaptive learning platform using fine-tuned LLaMA 3.1 8B model. Built modular LoRA-based SFT scripts and containerized the system for cloud deployment.",
+      technologies: ["Python", "FastAPI", "JavaScript", "Next.js", "Docker", "Hugging Face", "PyTorch", "PostgreSQL"],
+      link: "#"
     },
     {
-      title: "Automatic Laundry System – Embedded IoT Project",
-      period: "11/2024 – 12/2024",
-      description: "Designed an embedded system with sensors (LDR, rain, servo, fan) for weather-adaptive automation. Integrated with IoT principles for remote monitoring potential.",
-      technologies: ["Embedded Systems", "IoT", "Sensors", "Automation"]
+      title: "Chatbot for Education Platform using Analogy-Based Learning",
+      period: "2024",
+      description: "Built analogy-driven chatbot with semantic retrieval and contextual reasoning. Deployed via Docker with a lightweight web interface.",
+      technologies: ["OpenAI API", "LangChain", "Supabase", "Docker"],
+      link: "#"
     },
     {
-      title: "Cloud-Integrated Communication Website",
-      period: "02/2024 – 06/2024",
-      description: "Built a WordPress site hosted on a cloud server, highlighting analogy-based communication techniques for parents and children.",
-      technologies: ["WordPress", "Cloud Hosting", "Web Development"]
+      title: "Website on the Use of Analogies in Parent-Child Communication",
+      period: "2024",
+      description: "Developed educational site with responsive UI and interactive content. Optimized usability and content management workflows.",
+      technologies: ["WordPress", "Elementor"],
+      link: "#"
+    },
+    {
+      title: "Infrastructure Automation Project using Ansible",
+      period: "2024",
+      description: "Automated multi-server LAN setup including DNS, mail, load balancing, and proxy servers. Achieved faster provisioning and consistent deployments with reusable playbooks.",
+      technologies: ["Ansible", "Linux", "Bind9", "Postfix/Dovecot", "HAProxy", "Squid Proxy", "Bash"],
+      link: "#"
+    },
+    {
+      title: "Embedded System – Automatic Laundry System",
+      period: "2024",
+      description: "Designed automatic laundry system with weather-adaptive roof and drying fan using Arduino, servo motor, rain sensor, LDR, relay, and DC fan.",
+      technologies: ["Arduino", "C/C++", "Servo Motor", "Rain Sensor", "LDR", "Relay", "DC Fan", "LCD"],
+      link: "#"
     }
   ];
 
   const certifications = [
-    "Microsoft Certified: Azure AI Fundamentals – Microsoft",
-    "AWS Cloud Practitioner Essentials – Amazon Web Services",
-    "Complete Linux Training Course – Udemy",
-    "Professional Skill: Internet of Things – MySkill",
-    "Short Course: UI/UX Design Fundamentals – MySkill",
-    "Huawei ICT Competition National Final (2024–2025) – Huawei",
-    "Prompt Engineering with Azure OpenAI Service – GreatNusa",
-    "Microsoft Azure AI Fundamentals (AI-900T00-A) – GreatNusa"
+    "PILMAPRES 2025 – Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+    "Microsoft Certified: Azure AI Fundamentals (2025)",
+    "AWS Cloud Practitioner Essentials (2025)",
+    "AI Agents Fundamentals – Hugging Face (2025)",
+    "LLM Course Unit 3: Fine-Tuning Language Models – Hugging Face (2025)",
+    "HCIA-Storage V5.0, HCIA-Datacom V1.0, HCIA-Cloud Computing V5.5 – Huawei (2025)",
+    "Short Class: UI/UX Design Fundamental – Myskills (2024)",
+    "Complete Linux Training Course – Udemy (2025)",
+    "Go Programming Language – Great Learning (2025)",
+    "Del Debate Competition 2025 – British Parliamentary Debate, UPT Bahasa IT Del (2024)"
   ];
 
   const skills = {
-    "Cloud Platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"],
-    "Infrastructure & DevOps": ["Docker", "Kubernetes", "Terraform", "Ansible", "CI/CD (GitHub Actions, Jenkins)"],
-    "Programming & Scripting": ["Python", "Bash", "PowerShell"],
-    "System & Network": ["Linux Administration", "Networking (VPC, DNS, Load Balancing)", "Security (IAM, SSL/TLS)"],
-    "Monitoring & Automation": ["CloudWatch", "Prometheus", "Grafana"],
-    "AI & Integration": ["OpenAI API", "Serverless Functions (AWS Lambda, Cloud Functions)"]
+    "Programming & Frameworks": ["Python", "JavaScript", "C", "Next.js"],
+    "AI & Machine Learning": ["LoRA", "SFT", "Hugging Face", "OpenAI API", "LangChain", "Ollama"],
+    "Databases": ["Supabase", "PostgreSQL", "MySQL", "Vector DBs", "JSON/CSV"],
+    "DevOps & Cloud": ["Docker", "Kubernetes", "Terraform", "AWS", "CI/CD Pipelines"],
+    "Web Development": ["WordPress (Elementor, PHP)", "HTML", "CSS", "REST API"],
+    "Tools": ["Git", "GitHub", "Weights & Biases (wandb)", "Shell Scripting"]
   };
 
   const softSkills = [
-    "Problem-Solving", "Collaboration", "Technical Documentation", "Adaptability"
+    "Analytical Thinking", "Problem Solving", "Collaboration", "Adaptability", "Communication", "Ownership"
   ];
 
   const education = [
     {
-      degree: "Bachelor of Computer Technology / Computer Systems Technology",
-      school: "Institut Teknologi Del",
-      period: "2023 – Present"
+      degree: "Diploma in Computer Engineering",
+      school: "Institut Teknologi Del – Sitoluama, Laguboti, Toba Samosir",
+      period: "Aug 2023 – Sep 2026 (Expected)",
+      additionalInfo: "GPA: 3.80 / 4.00"
     },
     {
-      degree: "Science Major",
-      school: "SMAN 1 Girsang Sipangan Bolon, Parapat",
-      period: ""
+      degree: "Senior High School, Science Stream",
+      school: "SMAN 1 Girsang Sipangan Bolon – Parapat",
+      period: "2020 – 2023"
     }
   ];
 
@@ -135,7 +178,7 @@ const Portfolio = () => {
             </motion.div>
             <div className="hidden md:flex items-center space-x-4" role="menubar">
               <div className="flex space-x-8">
-                {['about', 'experience', 'projects', 'skills', 'education', 'contact'].map((item) => (
+                {['about', 'experience', 'organization', 'projects', 'skills', 'education', 'contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => {
@@ -145,7 +188,7 @@ const Portfolio = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className={`capitalize ${activeSection === item ? 'text-blue-600 font-medium' : 'text-gray-600 hover:text-blue-500'}`}
+                    className={`capitalize ${activeSection === item ? 'text-primary font-medium' : 'text-muted-foreground hover:text-primary'}`}
                     aria-label={`Navigate to ${item} section`}
                     role="menuitem"
                   >
@@ -158,7 +201,7 @@ const Portfolio = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-600 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                className="text-muted-foreground hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded"
                 aria-expanded={mobileMenuOpen}
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               >
@@ -186,7 +229,7 @@ const Portfolio = () => {
               aria-orientation="vertical"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {['about', 'experience', 'projects', 'skills', 'education', 'contact'].map((item) => (
+                {['about', 'experience', 'organization', 'projects', 'skills', 'education', 'contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => {
@@ -197,7 +240,7 @@ const Portfolio = () => {
                         element.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === item ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-500 hover:bg-gray-50'
+                    className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${activeSection === item ? 'bg-accent text-primary' : 'text-muted-foreground hover:text-primary hover:bg-accent'
                       }`}
                     role="menuitem"
                     aria-label={`Navigate to ${item} section`}
@@ -205,7 +248,7 @@ const Portfolio = () => {
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
                 ))}
-                <div className="px-3 py-2 rounded-md text-base font-medium w-full text-left text-gray-600 hover:text-blue-500 hover:bg-gray-50">
+                <div className="px-3 py-2 rounded-md text-base font-medium w-full text-left text-muted-foreground hover:text-primary hover:bg-accent">
                   <ThemeToggle />
                 </div>
               </div>
@@ -227,7 +270,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4"
               >
                 {profile.name}
               </motion.h1>
@@ -243,11 +286,11 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-lg text-gray-600 mb-8 max-w-lg"
+                className="text-lg text-foreground mb-8 max-w-lg"
               >
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation.
-                Passionate about designing and managing scalable, secure, and efficient cloud-based systems.
-              </motion.p>
+                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and Software Development. 
+                    Passionate about designing and managing scalable, secure, and efficient cloud-based systems and applications.
+                    Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.              </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -282,8 +325,8 @@ const Portfolio = () => {
                   className="w-64 h-64 md:w-80 md:h-80"
                 >
                   <AvatarFallback>
-                    <div className="bg-gray-200 w-full h-full rounded-full flex items-center justify-center">
-                      <span className="text-5xl text-gray-400">TNA</span>
+                    <div className="bg-muted w-full h-full rounded-full flex items-center justify-center">
+                      <span className="text-5xl text-muted-foreground">TNA</span>
                     </div>
                   </AvatarFallback>
                 </Avatar>
@@ -330,18 +373,19 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Linkedin className="text-primary" size={24} />
+                <Phone className="text-primary" size={24} />
                 <div>
-                  <p className="text-sm text-muted-foreground">LinkedIn</p>
-                  <p className="font-medium text-foreground">{profile.linkedin}</p>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <p className="font-medium text-foreground">{profile.phone}</p>
                 </div>
               </div>
             </div>
             <div className="mt-8">
               <p className="text-lg text-foreground leading-relaxed">
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation.
-                Passionate about designing and managing scalable, secure, and efficient cloud-based systems.
-                Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.
+                Motivated Computer Technology student specializing in frontend and full-stack web development.
+                Passionionate about building interactive, user-centric web applications with scalable and maintainable architecture.
+                Experienced in integrating AI features and deploying modern web apps using DevOps and cloud technologies.
+                Strong skills in translating user needs into responsive and efficient interfaces.
               </p>
             </div>
           </motion.div>
@@ -380,6 +424,53 @@ const Portfolio = () => {
                       <p className="text-lg text-primary mb-3">{exp.company}</p>
                       <ul className="space-y-2">
                         {exp.description.map((desc, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-primary mr-2">•</span>
+                            <span className="text-foreground">{desc}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Organization Section */}
+      <section id="organization" className="py-16 bg-card">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <Briefcase className="text-primary" size={32} />
+              <h2 className="text-3xl font-bold text-foreground">Organization Experience</h2>
+              <div className="h-px bg-border flex-grow"></div>
+            </div>
+            <div className="space-y-8">
+              {organizations.map((org, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
+                        <h3 className="text-xl font-bold text-foreground">{org.title}</h3>
+                        <Badge variant="default" className="text-sm">
+                          {org.period}
+                        </Badge>
+                      </div>
+                      <p className="text-lg text-primary mb-3">{org.organization}</p>
+                      <ul className="space-y-2">
+                        {org.description.map((desc, i) => (
                           <li key={i} className="flex items-start">
                             <span className="text-primary mr-2">•</span>
                             <span className="text-foreground">{desc}</span>
@@ -537,6 +628,9 @@ const Portfolio = () => {
                         <h3 className="text-lg font-bold text-foreground">{edu.degree}</h3>
                         <p className="text-primary font-medium">{edu.school}</p>
                         <p className="text-muted-foreground text-sm">{edu.period}</p>
+                        {edu.additionalInfo && (
+                          <p className="text-muted-foreground text-sm">{edu.additionalInfo}</p>
+                        )}
                       </div>
                     </CardContent>
                   </Card>

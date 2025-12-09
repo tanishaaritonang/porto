@@ -8,23 +8,25 @@ import { ThemeToggle } from '@/components/theme-toggle';
 
 const Skills = () => {
   const skills = {
-    "Cloud Platforms": ["AWS", "Azure", "Google Cloud Platform (GCP)"],
-    "Infrastructure & DevOps": ["Docker", "Kubernetes", "Terraform", "Ansible", "CI/CD (GitHub Actions, Jenkins)"],
-    "Programming & Scripting": ["Python", "Bash", "PowerShell", "HTML", "CSS", "JavaScript", "TypeScript"],
-    "System & Network": ["Linux Administration", "Networking (VPC, DNS, Load Balancing)", "Security (IAM, SSL/TLS)"],
-    "Monitoring & Automation": ["CloudWatch", "Prometheus", "Grafana"],
-    "AI & Integration": ["OpenAI API", "Serverless Functions (AWS Lambda, Cloud Functions)"]
+    "Programming & Frameworks": ["Python", "JavaScript", "C", "Next.js"],
+    "AI & Machine Learning": ["LoRA", "SFT", "Hugging Face", "OpenAI API", "LangChain", "Ollama"],
+    "Databases": ["Supabase", "PostgreSQL", "MySQL", "Vector DBs", "JSON/CSV"],
+    "DevOps & Cloud": ["Docker", "Kubernetes", "Terraform", "AWS", "CI/CD Pipelines"],
+    "Web Development": ["WordPress (Elementor, PHP)", "HTML", "CSS", "REST API"],
+    "Tools": ["Git", "GitHub", "Weights & Biases (wandb)", "Shell Scripting"]
   };
 
   const certifications = [
-    "Microsoft Certified: Azure AI Fundamentals – Microsoft",
-    "AWS Cloud Practitioner Essentials – Amazon Web Services",
-    "Complete Linux Training Course – Udemy",
-    "Professional Skill: Internet of Things – MySkill",
-    "Short Course: UI/UX Design Fundamentals – MySkill",
-    "Huawei ICT Competition National Final (2024–2025) – Huawei",
-    "Prompt Engineering with Azure OpenAI Service – GreatNusa",
-    "Microsoft Azure AI Fundamentals (AI-900T00-A) – GreatNusa"
+    "PILMAPRES 2025 – Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+    "Microsoft Certified: Azure AI Fundamentals (2025)",
+    "AWS Cloud Practitioner Essentials (2025)",
+    "AI Agents Fundamentals – Hugging Face (2025)",
+    "LLM Course Unit 3: Fine-Tuning Language Models – Hugging Face (2025)",
+    "HCIA-Storage V5.0, HCIA-Datacom V1.0, HCIA-Cloud Computing V5.5 – Huawei (2025)",
+    "Short Class: UI/UX Design Fundamental – Myskills (2024)",
+    "Complete Linux Training Course – Udemy (2025)",
+    "Go Programming Language – Great Learning (2025)",
+    "Del Debate Competition 2025 – British Parliamentary Debate, UPT Bahasa IT Del (2024)"
   ];
 
   return (
@@ -33,7 +35,7 @@ const Skills = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -72,7 +74,7 @@ const Skills = () => {
               <h1 className="text-3xl font-bold text-foreground">Skills & Certifications</h1>
               <div className="h-px bg-border flex-grow"></div>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6">Technical Skills</h2>
@@ -82,8 +84,8 @@ const Skills = () => {
                       <h3 className="font-semibold text-foreground mb-3 text-lg">{category}</h3>
                       <div className="flex flex-wrap gap-2">
                         {skillList.map((skill, i) => (
-                          <span 
-                            key={i} 
+                          <span
+                            key={i}
                             className="text-sm bg-card text-foreground px-3 py-1.5 rounded-full border border-border"
                           >
                             {skill}
@@ -94,7 +96,7 @@ const Skills = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
                   <Award className="text-primary" size={24} />
@@ -103,8 +105,8 @@ const Skills = () => {
                 <div className="bg-card p-6 rounded-xl shadow-sm border border-border">
                   <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
                     {certifications.map((cert, index) => (
-                      <div 
-                        key={index} 
+                      <div
+                        key={index}
                         className="text-foreground text-sm py-3 border-b border-border last:border-0"
                       >
                         <div className="flex items-start">
@@ -117,7 +119,7 @@ const Skills = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="mt-8">
                   <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
                     <Code className="text-primary" size={24} />
@@ -125,14 +127,14 @@ const Skills = () => {
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Cloud Architecture & Design",
-                      "Infrastructure as Code",
+                      "Frontend & Full-Stack Web Development",
+                      "AI Integration & LLMs",
+                      "Cloud Architecture & Deployment",
                       "DevOps & CI/CD Pipelines",
-                      "Containerization & Orchestration",
-                      "Security & Compliance",
+                      "Infrastructure Automation",
                       "Performance Optimization",
-                      "Monitoring & Logging",
-                      "Disaster Recovery & Backup"
+                      "Database Management",
+                      "Collaboration & Communication"
                     ].map((competency, index) => (
                       <Card key={index}>
                         <CardContent className="p-4">

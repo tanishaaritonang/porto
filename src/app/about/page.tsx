@@ -12,45 +12,68 @@ const About = () => {
   // Data from the resume
   const profile = {
     name: "Tanisha Natalia Aritonang",
-    title: "Computer Engineering Undergraduate | Aspiring Cloud Engineer",
-    email: "tanishanatrng@gmail.com",
-    location: "Medan",
-    linkedin: "linkedin.com/in/tanisha-natalia-aritonang-99763a263"
+    title: "Computer Technology Student | Frontend & Full-Stack Web Developer | AI Enthusiast | DevOps Practitioner",
+    email: "tanishaartng@gmail.com",
+    location: "Medan, North Sumatera",
+    linkedin: "https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a",
+    phone: "081396700208"
   };
 
   const experiences = [
     {
-      title: "Cloud & Infrastructure Enthusiast",
-      company: "HIMATEK (Computer Engineering Association)",
-      period: "09/2024 – Present",
+      title: "Matriculation Assistant",
+      company: "Institut Teknologi Del",
+      period: "August 2024",
       description: [
-        "Assisted in implementing cloud-based tools for academic projects and events.",
-        "Supported deployment and automation initiatives for internal activities.",
-        "Promoted awareness of cloud technology within the student community."
+        "Assisted in facilitating matriculation for ~500 new students.",
+        "Supported academic sessions, attendance, and classroom coordination.",
+        "Taught introductory programming and digital literacy (Microsoft Word, etc.)."
       ]
     },
     {
-      title: "Matriculation Assistant",
+      title: "Vice Chair of KPU HIMATEK",
       company: "Institut Teknologi Del",
-      period: "08/2024 – 08/2024",
+      period: "September 2025",
       description: [
-        "Supported academic sessions for ~500 students, ensuring smooth operations.",
-        "Assisted with technical setup, basic programming, and digital literacy workshops.",
-        "Collaborated with lecturers to coordinate academic resources efficiently."
+        "Assisted the Chair in leading the Election Commission of HIMATEK.",
+        "Organized and supervised the student election process.",
+        "Ensured fairness, transparency, and documentation integrity."
+      ]
+    }
+  ];
+
+  const organizations = [
+    {
+      title: "Leader of Education Division",
+      organization: "HIMATEK – Institut Teknologi Del",
+      period: "August 2025 – Present",
+      description: [
+        "Coordinated training programs, workshops, and academic development.",
+        "Designed initiatives to improve technical and academic performance."
+      ]
+    },
+    {
+      title: "Leader of Competition Division", 
+      organization: "HIMATEK – Institut Teknologi Del",
+      period: "August 2024 – Present",
+      description: [
+        "Organized technical workshops and collaboration with lecturers.",
+        "Mentored junior members and promoted continuous learning."
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Computer Technology / Computer Systems Technology",
-      school: "Institut Teknologi Del",
-      period: "2023 – Present"
+      degree: "Diploma in Computer Engineering",
+      school: "Institut Teknologi Del – Sitoluama, Laguboti, Toba Samosir",
+      period: "Aug 2023 – Sep 2026 (Expected)",
+      additionalInfo: "GPA: 3.80 / 4.00"
     },
     {
-      degree: "Science Major",
-      school: "SMAN 1 Girsang Sipangan Bolon, Parapat",
-      period: ""
+      degree: "Senior High School, Science Stream",
+      school: "SMAN 1 Girsang Sipangan Bolon – Parapat",
+      period: "2020 – 2023"
     }
   ];
 
@@ -60,7 +83,7 @@ const About = () => {
   ];
 
   const softSkills = [
-    "Problem-Solving", "Collaboration", "Technical Documentation", "Adaptability"
+    "Analytical Thinking", "Problem Solving", "Collaboration", "Adaptability", "Communication", "Ownership"
   ];
 
   return (
@@ -69,7 +92,7 @@ const About = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -78,16 +101,16 @@ const About = () => {
               TNA
             </motion.div>
             <div className="hidden md:flex space-x-8">
-              <a href="/" className="capitalize text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="/" className="capitalize text-muted-foreground hover:text-primary">
                 Home
               </a>
-              <a href="/about" className="capitalize text-blue-600 font-medium dark:text-blue-400">
+              <a href="/about" className="capitalize text-primary font-medium">
                 About
               </a>
-              <a href="/projects" className="capitalize text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="/projects" className="capitalize text-muted-foreground hover:text-primary">
                 Projects
               </a>
-              <a href="/skills" className="capitalize text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="/skills" className="capitalize text-muted-foreground hover:text-primary">
                 Skills
               </a>
             </div>
@@ -104,46 +127,46 @@ const About = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">About Me</h1>
-              <div className="h-px bg-gray-300 dark:bg-gray-600 flex-grow"></div>
+              <h1 className="text-3xl font-bold text-foreground">About Me</h1>
+              <div className="h-px bg-border flex-grow"></div>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-1">
                 <div className="sticky top-32">
                   <div className="flex flex-col items-center text-center">
                     <Avatar src="/foto.jpeg" alt={`${profile.name}'s profile picture`} className="w-48 h-48 mb-6">
                       <AvatarFallback>
-                        <div className="bg-gray-200 w-full h-full rounded-full flex items-center justify-center">
-                          <span className="text-5xl text-gray-400">TNA</span>
+                        <div className="bg-muted w-full h-full rounded-full flex items-center justify-center">
+                          <span className="text-5xl text-muted-foreground">TNA</span>
                         </div>
                       </AvatarFallback>
                     </Avatar>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{profile.name}</h2>
-                    <p className="text-blue-600 dark:text-blue-400 mb-6">{profile.title}</p>
-                    
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{profile.name}</h2>
+                    <p className="text-primary mb-6">{profile.title}</p>
+
                     <div className="w-full space-y-4 mb-8">
                       <div className="flex items-center gap-3">
-                        <Mail className="text-blue-600 dark:text-blue-400" size={20} />
-                        <span className="text-gray-700 dark:text-gray-300">{profile.email}</span>
+                        <Mail className="text-primary" size={20} />
+                        <span className="text-foreground">{profile.email}</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <MapPin className="text-blue-600 dark:text-blue-400" size={20} />
-                        <span className="text-gray-700 dark:text-gray-300">{profile.location}</span>
+                        <MapPin className="text-primary" size={20} />
+                        <span className="text-foreground">{profile.location}</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <Linkedin className="text-blue-600 dark:text-blue-400" size={20} />
-                        <span className="text-gray-700 dark:text-gray-300">{profile.linkedin}</span>
+                        <Mail className="text-primary" size={20} />
+                        <span className="text-foreground">{profile.phone}</span>
                       </div>
                     </div>
-                    
+
                     <div className="w-full">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Languages</h3>
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Languages</h3>
                       <div className="space-y-2">
                         {languages.map((lang, index) => (
                           <div key={index} className="flex justify-between">
-                            <span className="text-gray-700 dark:text-gray-300">{lang.name}</span>
-                            <span className="text-gray-600 dark:text-gray-400">{lang.level}</span>
+                            <span className="text-foreground">{lang.name}</span>
+                            <span className="text-muted-foreground">{lang.level}</span>
                           </div>
                         ))}
                       </div>
@@ -151,25 +174,26 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="lg:col-span-2">
                 <div className="mb-12">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Professional Summary</h2>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and automation. 
-                    Passionate about designing and managing scalable, secure, and efficient cloud-based systems. 
-                    Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.
+                  <h2 className="text-xl font-bold text-foreground mb-4">Professional Summary</h2>
+                  <p className="text-foreground leading-relaxed">
+                    Motivated Computer Technology student specializing in frontend and full-stack web development.
+                    Passionionate about building interactive, user-centric web applications with scalable and maintainable architecture.
+                    Experienced in integrating AI features and deploying modern web apps using DevOps and cloud technologies.
+                    Strong skills in translating user needs into responsive and efficient interfaces.
                   </p>
                 </div>
-                
+
                 <div className="mb-12">
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                    <Briefcase className="text-blue-600 dark:text-blue-400" size={24} />
+                  <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    <Briefcase className="text-primary" size={24} />
                     Experience
                   </h2>
                   <div className="space-y-8">
                     {experiences.map((exp, index) => (
-                      <motion.div 
+                      <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -178,17 +202,17 @@ const About = () => {
                         <Card>
                           <CardContent className="p-6">
                             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
-                              <h3 className="text-xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                              <Badge variant="default" className="bg-blue-100 text-blue-800 text-sm dark:bg-blue-900/50 dark:text-blue-300">
+                              <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
+                              <Badge variant="default" className="text-sm">
                                 {exp.period}
                               </Badge>
                             </div>
-                            <p className="text-lg text-blue-600 dark:text-blue-400 mb-3">{exp.company}</p>
+                            <p className="text-lg text-primary mb-3">{exp.company}</p>
                             <ul className="space-y-2">
                               {exp.description.map((desc, i) => (
                                 <li key={i} className="flex items-start">
-                                  <span className="text-blue-600 dark:text-blue-400 mr-2">•</span>
-                                  <span className="text-gray-700 dark:text-gray-300">{desc}</span>
+                                  <span className="text-primary mr-2">•</span>
+                                  <span className="text-foreground">{desc}</span>
                                 </li>
                               ))}
                             </ul>
@@ -198,15 +222,52 @@ const About = () => {
                     ))}
                   </div>
                 </div>
-                
+
+                <div className="mb-12">
+                  <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    <Briefcase className="text-primary" size={24} />
+                    Organization Experience
+                  </h2>
+                  <div className="space-y-8">
+                    {organizations.map((org, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                      >
+                        <Card>
+                          <CardContent className="p-6">
+                            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-3">
+                              <h3 className="text-xl font-bold text-foreground">{org.title}</h3>
+                              <Badge variant="default" className="text-sm">
+                                {org.period}
+                              </Badge>
+                            </div>
+                            <p className="text-lg text-primary mb-3">{org.organization}</p>
+                            <ul className="space-y-2">
+                              {org.description.map((desc, i) => (
+                                <li key={i} className="flex items-start">
+                                  <span className="text-primary mr-2">•</span>
+                                  <span className="text-foreground">{desc}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
-                    <GraduationCap className="text-blue-600 dark:text-blue-400" size={24} />
+                  <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                    <GraduationCap className="text-primary" size={24} />
                     Education
                   </h2>
                   <div className="space-y-6">
                     {education.map((edu, index) => (
-                      <motion.div 
+                      <motion.div
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -214,27 +275,30 @@ const About = () => {
                       >
                         <Card>
                           <CardContent className="p-6 flex items-start gap-4">
-                            <div className="bg-blue-100 p-3 rounded-full dark:bg-blue-900/50">
-                              <GraduationCap className="text-blue-600 dark:text-blue-400" size={24} />
+                            <div className="bg-primary/10 p-3 rounded-full">
+                              <GraduationCap className="text-primary" size={24} />
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold text-gray-900 dark:text-white">{edu.degree}</h3>
-                              <p className="text-blue-600 dark:text-blue-400 font-medium">{edu.school}</p>
-                              <p className="text-gray-600 dark:text-gray-400 text-sm">{edu.period}</p>
+                              <h3 className="text-lg font-bold text-foreground">{edu.degree}</h3>
+                              <p className="text-primary font-medium">{edu.school}</p>
+                              <p className="text-muted-foreground text-sm">{edu.period}</p>
+                              {edu.additionalInfo && (
+                                <p className="text-muted-foreground text-sm">{edu.additionalInfo}</p>
+                              )}
                             </div>
                           </CardContent>
                         </Card>
                       </motion.div>
                     ))}
                   </div>
-                  
+
                   <div className="mt-8">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Soft Skills</h3>
+                    <h3 className="text-xl font-semibold text-foreground mb-4">Soft Skills</h3>
                     <div className="flex flex-wrap gap-2">
                       {softSkills.map((skill, index) => (
-                        <span 
-                          key={index} 
-                          className="text-sm bg-white text-gray-700 px-3 py-1 rounded-full border border-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
+                        <span
+                          key={index}
+                          className="text-sm bg-card text-foreground px-3 py-1 rounded-full border border-border"
                         >
                           {skill}
                         </span>

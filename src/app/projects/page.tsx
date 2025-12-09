@@ -10,41 +10,40 @@ import { ThemeToggle } from '@/components/theme-toggle';
 const Projects = () => {
   const projects = [
     {
-      title: "CurioKids – Question-Answering Chatbot",
-      period: "04/2025 – 05/2025",
-      description: "Deployed chatbot on a cloud-based backend using Supabase and LangChain, integrating OpenAI API. Configured environment with Docker and GitHub Actions for automated testing and deployment.",
-      technologies: ["OpenAI", "LangChain", "Supabase", "Cloud Deployment", "JavaScript"],
+      title: "AI-Supported Adaptive Learning System for Computer Networks",
+      period: "2025",
+      description: "Developed adaptive learning platform using fine-tuned LLaMA 3.1 8B model. Built modular LoRA-based SFT scripts and containerized the system for cloud deployment.",
+      technologies: ["Python", "FastAPI", "JavaScript", "Next.js", "Docker", "Hugging Face", "PyTorch", "PostgreSQL"],
       link: "#"
     },
     {
-      title: "Adaptive Learning System with DeepSeek R1:8B",
-      period: "08/2024 – 10/2024",
-      description: "Built an adaptive learning platform leveraging the DeepSeek R1:8B model fine-tuned using LoRA on Hugging Face. Integrated model inference via Ollama and managed the backend with PostgreSQL. The system was containerized using Docker for modular deployment and scalability, with a Next.js frontend delivering dynamic and personalized learning experiences.",
-      technologies: ["Next.js", "PostgreSQL", "Docker", "Ollama", "DeepSeek R1:8B", "Hugging Face", "LoRA"],
+      title: "Chatbot for Education Platform using Analogy-Based Learning",
+      period: "2024",
+      description: "Built analogy-driven chatbot with semantic retrieval and contextual reasoning. Deployed via Docker with a lightweight web interface.",
+      technologies: ["OpenAI API", "LangChain", "Supabase", "Docker"],
       link: "#"
     },
     {
-      title: "Automatic Laundry System – Embedded IoT Project",
-      period: "11/2024 – 12/2024",
-      description: "Designed an embedded system with sensors (LDR, rain, servo, fan) for weather-adaptive automation. Integrated with IoT principles for remote monitoring potential.",
-      technologies: ["Embedded Systems", "IoT", "Sensors", "Automation"],
+      title: "Website on the Use of Analogies in Parent-Child Communication",
+      period: "2024",
+      description: "Developed educational site with responsive UI and interactive content. Optimized usability and content management workflows.",
+      technologies: ["WordPress", "Elementor"],
       link: "#"
     },
     {
-      title: "Cloud-Integrated Communication Website",
-      period: "02/2024 – 06/2024",
-      description: "Built a WordPress site hosted on a cloud server, highlighting analogy-based communication techniques for parents and children.",
-      technologies: ["WordPress", "Cloud Hosting", "Web Development"],
+      title: "Infrastructure Automation Project using Ansible",
+      period: "2024",
+      description: "Automated multi-server LAN setup including DNS, mail, load balancing, and proxy servers. Achieved faster provisioning and consistent deployments with reusable playbooks.",
+      technologies: ["Ansible", "Linux", "Bind9", "Postfix/Dovecot", "HAProxy", "Squid Proxy", "Bash"],
       link: "#"
     },
     {
-      title: "Containerized Microservices Architecture",
-      period: "05/2024 – 07/2024",
-      description: "Designed and deployed a containerized microservices application using Docker and Kubernetes for improved scalability and maintainability.",
-      technologies: ["Docker", "Kubernetes", "Microservices", "DevOps"],
+      title: "Embedded System – Automatic Laundry System",
+      period: "2024",
+      description: "Designed automatic laundry system with weather-adaptive roof and drying fan using Arduino, servo motor, rain sensor, LDR, relay, and DC fan.",
+      technologies: ["Arduino", "C/C++", "Servo Motor", "Rain Sensor", "LDR", "Relay", "DC Fan", "LCD"],
       link: "#"
-    },
-
+    }
   ];
 
   return (
@@ -94,8 +93,8 @@ const Projects = () => {
             </div>
 
             <p className="text-lg text-foreground mb-12 max-w-3xl">
-              Here are some of my recent projects that showcase my skills in cloud computing,
-              infrastructure automation, and software development.
+              Here are some of my recent projects that showcase my skills in frontend and full-stack web development,
+              AI integration, DevOps, and infrastructure automation.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
