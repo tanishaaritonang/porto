@@ -41,8 +41,7 @@ const Skills = () => {
               transition={{ duration: 0.5 }}
               className="text-xl font-bold text-foreground"
             >
-              TNA
-            </motion.div>
+              Tanisha            </motion.div>
             <div className="hidden md:flex space-x-8">
               <a href="/" className="capitalize text-muted-foreground hover:text-primary">
                 Home

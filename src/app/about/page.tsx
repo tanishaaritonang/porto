@@ -98,8 +98,7 @@ const About = () => {
               transition={{ duration: 0.5 }}
               className="text-xl font-bold text-foreground"
             >
-              TNA
-            </motion.div>
+              Tanisha            </motion.div>
             <div className="hidden md:flex space-x-8">
               <a href="/" className="capitalize text-muted-foreground hover:text-primary">
                 Home
@@ -112,6 +111,9 @@ const About = () => {
               </a>
               <a href="/skills" className="capitalize text-muted-foreground hover:text-primary">
                 Skills
+              </a>
+              <a href="#contact" className="capitalize text-muted-foreground hover:text-primary">
+                Contact
               </a>
             </div>
             <ThemeToggle />
@@ -311,6 +313,117 @@ const About = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 bg-muted">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-card rounded-2xl shadow-xl p-8 md:p-12"
+          >
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-foreground mb-2">Get In Touch</h2>
+              <p className="text-muted-foreground max-w-md mx-auto">
+                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+              </p>
+            </div>
+
+            <form
+              className="space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const target = e.target as HTMLFormElement;
+                const formData = new FormData(target);
+                const name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                const subject = formData.get('subject') as string;
+                const message = formData.get('message') as string;
+
+                // Create email using mailto link with all fields pre-filled
+                const mailtoLink = `mailto:tanishaartng@gmail.com?subject=${encodeURIComponent(subject + ' from ' + name + ' (' + email + ')')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message + '\n\n---\nSent from portfolio website')}`;
+
+                try {
+                  // Try to open mail client
+                  window.location.href = mailtoLink;
+                } catch (error) {
+                  // If mailto fails, show alert with email content to paste
+                  alert(`Failed to open email client. Here's the information to copy:\n\nTo: tanishaartng@gmail.com\nSubject: ${subject + ' from ' + name + ' (' + email + ')'}\nBody:\nName: ${name}\nEmail: ${email}\n\n${message}\n\n---\nSent from portfolio website`);
+                }
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
+                  placeholder="How can I help you?"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  className="w-full px-4 py-3 border border-input bg-background rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition"
+                  placeholder="Your message here..."
+                  required
+                ></textarea>
+              </div>
+              <div className="pt-4 space-y-4">
+                <Button variant="primary" className="w-full md:w-auto px-8 py-3" type="submit">
+                  Send Message via Email
+                </Button>
+                <div className="text-center">
+                  <p className="text-foreground text-sm">Or copy and paste email:</p>
+                  <div className="flex items-center justify-center mt-2">
+                    <span className="bg-card px-4 py-2 rounded-l-lg border border-border text-foreground font-mono text-sm">tanishaartng@gmail.com</span>
+                    <button
+                      type="button"
+                      className="bg-primary text-primary-foreground px-4 py-2 rounded-r-lg border border-l-0 border-border text-sm hover:bg-primary/80 transition-colors"
+                      onClick={() => {
+                        navigator.clipboard.writeText('tanishaartng@gmail.com');
+                        alert('Email copied to clipboard!');
+                      }}
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </motion.div>
+        </div>
+      </section>
 
       <footer className="py-8 bg-muted-foreground text-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

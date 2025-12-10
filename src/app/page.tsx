@@ -84,14 +84,14 @@ const Portfolio = () => {
       period: "2025",
       description: "Developed adaptive learning platform using fine-tuned LLaMA 3.1 8B model. Built modular LoRA-based SFT scripts and containerized the system for cloud deployment.",
       technologies: ["Python", "FastAPI", "JavaScript", "Next.js", "Docker", "Hugging Face", "PyTorch", "PostgreSQL"],
-      link: "#"
+      link: "https://github.com/tanishaaritonang/ADLv2"
     },
     {
       title: "Chatbot for Education Platform using Analogy-Based Learning",
       period: "2024",
       description: "Built analogy-driven chatbot with semantic retrieval and contextual reasoning. Deployed via Docker with a lightweight web interface.",
       technologies: ["OpenAI API", "LangChain", "Supabase", "Docker"],
-      link: "#"
+      link: "https://github.com/tanishaaritonang/PA2_Product"
     },
     {
       title: "Website on the Use of Analogies in Parent-Child Communication",
@@ -174,7 +174,7 @@ const Portfolio = () => {
               className="text-xl font-bold text-foreground"
               aria-label="Portfolio logo"
             >
-              TNA
+              Tanisha
             </motion.div>
             <div className="hidden md:flex items-center space-x-4" role="menubar">
               <div className="flex space-x-8">
@@ -297,7 +297,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex flex-wrap gap-4"
               >
-                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-blue-600 active:bg-blue-700 dark:hover:bg-blue-400 dark:active:bg-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                   <Mail size={20} aria-hidden="true" />
                   Contact Me
                 </a>
@@ -523,9 +523,18 @@ const Portfolio = () => {
                           </Badge>
                         ))}
                       </div>
-                      <Button variant="ghost" size="sm" className="p-0 h-auto flex items-center gap-1 text-primary hover:text-primary/90 text-sm font-medium">
-                        View Project <ExternalLink size={14} />
-                      </Button>
+                      {project.link !== "#" ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-primary hover:text-primary/90 text-sm font-medium"
+                        >
+                          View Project <ExternalLink size={14} />
+                        </a>
+                      ) : (
+                        <span className="text-muted-foreground text-sm">View Project</span>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -679,10 +688,17 @@ const Portfolio = () => {
                 const email = formData.get('email') as string;
                 const subject = formData.get('subject') as string;
                 const message = formData.get('message') as string;
-                
-                // Send email using mailto link
-                const mailtoLink = `mailto:tanishaartng@gmail.com?subject=${encodeURIComponent(subject + ' from ' + name + ' (' + email + ')')}&body=${encodeURIComponent(message + '\n\nSent from portfolio website')}`;
-                window.location.href = mailtoLink;
+
+                // Create email using mailto link with all fields pre-filled
+                const mailtoLink = `mailto:tanishaartng@gmail.com?subject=${encodeURIComponent(subject + ' from ' + name + ' (' + email + ')')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message + '\n\n---\nSent from portfolio website')}`;
+
+                try {
+                  // Try to open mail client
+                  window.location.href = mailtoLink;
+                } catch (error) {
+                  // If mailto fails, show alert with email content to paste
+                  alert(`Failed to open email client. Here's the information to copy:\n\nTo: tanishaartng@gmail.com\nSubject: ${subject + ' from ' + name + ' (' + email + ')'}\nBody:\nName: ${name}\nEmail: ${email}\n\n${message}\n\n---\nSent from portfolio website`);
+                }
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -731,10 +747,26 @@ const Portfolio = () => {
                   required
                 ></textarea>
               </div>
-              <div className="pt-4">
+              <div className="pt-4 space-y-4">
                 <Button variant="primary" className="w-full md:w-auto px-8 py-3" type="submit">
-                  Send Message
+                  Send Message via Email
                 </Button>
+                <div className="text-center">
+                  <p className="text-foreground text-sm">Or copy and paste email:</p>
+                  <div className="flex items-center justify-center mt-2">
+                    <span className="bg-card px-4 py-2 rounded-l-lg border border-border text-foreground font-mono text-sm">tanishaartng@gmail.com</span>
+                    <button
+                      type="button"
+                      className="bg-primary text-primary-foreground px-4 py-2 rounded-r-lg border border-l-0 border-border text-sm hover:bg-blue-600 active:bg-blue-700 dark:hover:bg-blue-400 dark:active:bg-blue-500 transition-colors"
+                      onClick={() => {
+                        navigator.clipboard.writeText('tanishaartng@gmail.com');
+                        alert('Email copied to clipboard!');
+                      }}
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
               </div>
             </form>
           </motion.div>
