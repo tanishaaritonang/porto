@@ -35,27 +35,38 @@ const Portfolio = () => {
   };
 
   const experiences = [
-    {
-      title: "Matriculation Assistant",
-      company: "Institut Teknologi Del",
-      period: "August 2024",
-      description: [
-        "Assisted in facilitating matriculation for ~500 new students.",
-        "Supported academic sessions, attendance, and classroom coordination.",
-        "Taught introductory programming and digital literacy (Microsoft Word, etc.)."
-      ]
-    },
-    {
-      title: "Vice Chair of KPU HIMATEK",
-      company: "Institut Teknologi Del",
-      period: "September 2025",
-      description: [
-        "Assisted the Chair in leading the Election Commission of HIMATEK.",
-        "Organized and supervised the student election process.",
-        "Ensured fairness, transparency, and documentation integrity."
-      ]
-    }
-  ];
+  {
+    title: "Matriculation Assistant",
+    company: "Institut Teknologi Del",
+    period: "August 2024",
+    description: [
+      "Assisted in facilitating matriculation for ~500 new students.",
+      "Supported academic sessions, attendance, and classroom coordination.",
+      "Taught introductory programming and digital literacy (Microsoft Word, etc.)."
+    ]
+  },
+  {
+    title: "Vice Chair of KPU HIMATEK",
+    company: "Institut Teknologi Del",
+    period: "September 2025",
+    description: [
+      "Assisted the Chair in leading the Election Commission of HIMATEK.",
+      "Organized and supervised the student election process.",
+      "Ensured fairness, transparency, and documentation integrity."
+    ]
+  },
+  {
+    title: "PILMAPRES Participant",
+    company: "Institut Teknologi Del",
+    period: "2024 / 2025",
+    description: [
+      "Selected as a representative for the campus in the PILMAPRES competition.",
+      "Prepared a proposal for a chatbot analogy project as the scientific writing component.",
+      "Presented a topic on poverty within the Sustainable Development Goals (SDG) framework."
+    ]
+  }
+];
+
 
   const organizations = [
     {
@@ -87,19 +98,20 @@ const Portfolio = () => {
       link: "https://github.com/tanishaaritonang/ADLv2"
     },
     {
+      title: "End-to-End DevOps Project with GitOps Implementation",
+      period: "2025",
+      description: "Built production-ready GitOps pipeline for automated Kubernetes deployments. Implemented Infrastructure as Code with Terraform, continuous delivery with ArgoCD, and self-healing mechanisms for high availability.",
+      technologies: ["Terraform", "Kubernetes", "ArgoCD", "Helm", "Docker", "Minikube", "Python", "Flask", "GitOps"],
+      link: "https://github.com/tanishaaritonang/end-to-end-devOps"
+    },
+    {
       title: "Chatbot for Education Platform using Analogy-Based Learning",
       period: "2024",
       description: "Built analogy-driven chatbot with semantic retrieval and contextual reasoning. Deployed via Docker with a lightweight web interface.",
       technologies: ["OpenAI API", "LangChain", "Supabase", "Docker"],
       link: "https://github.com/tanishaaritonang/PA2_Product"
     },
-    {
-      title: "Website on the Use of Analogies in Parent-Child Communication",
-      period: "2024",
-      description: "Developed educational site with responsive UI and interactive content. Optimized usability and content management workflows.",
-      technologies: ["WordPress", "Elementor"],
-      link: "#"
-    },
+    ,
     {
       title: "Infrastructure Automation Project using Ansible",
       period: "2024",
@@ -113,20 +125,69 @@ const Portfolio = () => {
       description: "Designed automatic laundry system with weather-adaptive roof and drying fan using Arduino, servo motor, rain sensor, LDR, relay, and DC fan.",
       technologies: ["Arduino", "C/C++", "Servo Motor", "Rain Sensor", "LDR", "Relay", "DC Fan", "LCD"],
       link: "#"
+    },
+    {
+
+      title: "Genshin Impact Character Viewer",
+      period: "2024",
+      description: "Built a simple web application for browsing Genshin Impact character information using PHP and JSON data from Paimon.moe.",
+      technologies: ["PHP", "CSS", "JSON"],
+      link: "#"
+    },
+    {
+      title: "Website on the Use of Analogies in Parent-Child Communication",
+      period: "2024",
+      description: "Developed educational site with responsive UI and interactive content. Optimized usability and content management workflows.",
+      technologies: ["WordPress", "Elementor"],
+      link: "#"
     }
   ];
 
   const certifications = [
-    "PILMAPRES 2025 – Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
-    "Microsoft Certified: Azure AI Fundamentals (2025)",
-    "AWS Cloud Practitioner Essentials (2025)",
-    "AI Agents Fundamentals – Hugging Face (2025)",
-    "LLM Course Unit 3: Fine-Tuning Language Models – Hugging Face (2025)",
-    "HCIA-Storage V5.0, HCIA-Datacom V1.0, HCIA-Cloud Computing V5.5 – Huawei (2025)",
-    "Short Class: UI/UX Design Fundamental – Myskills (2024)",
-    "Complete Linux Training Course – Udemy (2025)",
-    "Go Programming Language – Great Learning (2025)",
-    "Del Debate Competition 2025 – British Parliamentary Debate, UPT Bahasa IT Del (2024)"
+    {
+      text: "PILMAPRES 2025 – Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
+      link: "/1753187039000 (1).jpg"
+    },
+    {
+      text: "Microsoft Certified: Azure AI Fundamentals (2025)",
+      link: "https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=455&cvid=becO9kh/V3cTX4ESpPrNLQ=="
+    },
+    {
+      text: "AWS Cloud Practitioner Essentials (2025)",
+      link: "https://drive.google.com/file/d/1MQncQXG89xEDTeX_26HCjmhC--X918ej/view?usp=sharing"
+    },
+    {
+      text: "AI Agents Fundamentals – Hugging Face (2025)",
+      link: "https://drive.google.com/file/d/1QVI8h-sYcZ4I7exIuHAwIIkejraeULXN/view"
+    },
+    {
+      text: "LLM Course Unit 3: Fine-Tuning Language Models – Hugging Face (2025)",
+      link: "https://drive.google.com/file/d/1S9OVBzebmwIHvF0jV94j0CcMMy6JEffh/view?usp=drive_link"
+    },
+    {
+      text: "HCIA-Storage V5.0, HCIA-Datacom V1.0, HCIA-Cloud Computing V5.5 – Huawei (2025)",
+      link: [
+        "https://drive.google.com/file/d/1K0Lo566CZTno4vDQtoAI_ABt4lStvBu8/view?usp=sharing",
+        "https://drive.google.com/file/d/1zI0HMMUti-ghQKTzNW81_JUyqzdsp4nq/view?usp=drive_link",
+        "https://drive.google.com/file/d/1G5m8U9y6f5gxGWQjkon1cqI89I0RPQZS/view?usp=sharing"
+      ]
+    },
+    {
+      text: "Short Class: UI/UX Design Fundamental – Myskills (2024)",
+      link: "#"
+    },
+    {
+      text: "Complete Linux Training Course – Udemy (2025)",
+      link: "https://ude.my/UC-d69ccfe5-d0ec-4de1-92a6-9289047e0cc1"
+    },
+    {
+      text: "Go Programming Language – Great Learning (2025)",
+      link: "https://drive.google.com/file/d/1WCduPnysKP5KktHVVdAiCaSa28n7Ypj5/view?usp=drive_link"
+    },
+    {
+      text: "Del Debate Competition 2025 – British Parliamentary Debate, UPT Bahasa IT Del (2024)",
+      link: "/1747013211944.jpg"
+    }
   ];
 
   const skills = {
@@ -288,9 +349,9 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-lg text-foreground mb-8 max-w-lg"
               >
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and Software Development. 
-                    Passionate about designing and managing scalable, secure, and efficient cloud-based systems and applications.
-                    Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.              </motion.p>
+                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and Software Development.
+                Passionate about designing and managing scalable, secure, and efficient cloud-based systems and applications.
+                Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.              </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -597,7 +658,35 @@ const Portfolio = () => {
                 <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
                   {certifications.map((cert, index) => (
                     <div key={index} className="text-foreground text-sm py-2 border-b border-border">
-                      {cert}
+                      {Array.isArray(cert.link) ? (
+                        <div>
+                          <span>{cert.text}</span>
+                          <div className="flex flex-wrap gap-2 mt-1">
+                            {cert.link.map((link, idx) => (
+                              <a
+                                key={idx}
+                                href={link}
+                                target={link.startsWith('/') ? "_self" : "_blank"}
+                                rel={link.startsWith('/') ? "" : "noopener noreferrer"}
+                                className="inline-flex items-center gap-1 text-primary hover:underline text-xs"
+                              >
+                                Link {idx + 1} <ExternalLink size={10} />
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      ) : cert.link && cert.link !== "#" ? (
+                        <a
+                          href={cert.link}
+                          target={cert.link.startsWith('/') ? "_self" : "_blank"}
+                          rel={cert.link.startsWith('/') ? "" : "noopener noreferrer"}
+                          className="inline-flex items-center gap-1 text-primary hover:underline"
+                        >
+                          {cert.text} <ExternalLink size={12} />
+                        </a>
+                      ) : (
+                        <span>{cert.text}</span>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -678,7 +767,7 @@ const Portfolio = () => {
               </p>
             </div>
 
-            <form 
+            <form
               className="space-y-6"
               onSubmit={(e) => {
                 e.preventDefault();

@@ -1287,18 +1287,6 @@ html {
   background-color: rgb(var(--accent));
 }
 
-.hover\:bg-primary\/80:hover{
-  background-color: rgb(var(--primary) / 0.8);
-}
-
-.hover\:bg-primary\/90:hover{
-  background-color: rgb(var(--primary) / 0.9);
-}
-
-.hover\:bg-secondary\/80:hover{
-  background-color: rgb(var(--secondary) / 0.8);
-}
-
 .hover\:bg-blue-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
@@ -1307,6 +1295,10 @@ html {
 .hover\:bg-gray-200:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-primary\/80:hover{
+  background-color: rgb(var(--primary) / 0.8);
 }
 
 .hover\:text-accent-foreground:hover{
@@ -1319,6 +1311,10 @@ html {
 
 .hover\:text-primary\/90:hover{
   color: rgb(var(--primary) / 0.9);
+}
+
+.hover\:underline:hover{
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-md:hover{
@@ -1363,18 +1359,6 @@ html {
 
 .focus-visible\:ring-offset-2:focus-visible{
   --tw-ring-offset-width: 2px;
-}
-
-.active\:bg-accent\/90:active{
-  background-color: rgb(var(--accent) / 0.9);
-}
-
-.active\:bg-primary\/80:active{
-  background-color: rgb(var(--primary) / 0.8);
-}
-
-.active\:bg-secondary\/70:active{
-  background-color: rgb(var(--secondary) / 0.7);
 }
 
 .active\:bg-blue-700:active{
