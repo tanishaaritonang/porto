@@ -319,18 +319,18 @@ const Portfolio = () => {
           }
         `}</style>
         <div className="matrix-bg">
-          {Array.from({ length: 20 }).map((_, i) => (
+          {Array.from({ length: 10 }).map((_, i) => (
             <div
               key={i}
               className="matrix-column"
               style={{
-                left: `${i * 5}%`,
+                left: `${i * 10}%`,
                 animationDuration: `${15 + Math.random() * 10}s`,
                 animationDelay: `${Math.random() * 5}s`,
-                opacity: 0.3 + Math.random() * 0.4
+                opacity: 0.2 + Math.random() * 0.3
               }}
             >
-              {Array.from({ length: 30 }).map((_, j) => (
+              {Array.from({ length: 15 }).map((_, j) => (
                 <div key={j}>01</div>
               ))}
             </div>
