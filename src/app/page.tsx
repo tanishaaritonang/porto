@@ -231,30 +231,6 @@ const Portfolio = () => {
     <>
       <div className="min-h-screen bg-background font-mono relative">
         <style jsx global>{`
-          @keyframes matrixRain {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
-          }
-          .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-          }
-          .matrix-column {
-            position: absolute;
-            top: -100%;
-            width: 20px;
-            height: 100vh;
-            color: rgba(0, 255, 0, 0.7);
-            font-size: 18px;
-            font-family: monospace;
-            text-align: center;
-            animation: matrixRain linear infinite;
-          }
           .terminal-block {
             border: 1px solid #4a5568;
             border-radius: 4px;
@@ -318,24 +294,6 @@ const Portfolio = () => {
             box-shadow: 0 0 15px rgba(34, 197, 94, 0.7);
           }
         `}</style>
-        <div className="matrix-bg">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div
-              key={i}
-              className="matrix-column"
-              style={{
-                left: `${i * 10}%`,
-                animationDuration: `${15 + Math.random() * 10}s`,
-                animationDelay: `${Math.random() * 5}s`,
-                opacity: 0.2 + Math.random() * 0.3
-              }}
-            >
-              {Array.from({ length: 15 }).map((_, j) => (
-                <div key={j}>01</div>
-              ))}
-            </div>
-          ))}
-        </div>
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border" role="navigation" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
