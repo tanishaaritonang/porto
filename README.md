@@ -1,124 +1,129 @@
-# 👩‍💻 Tanisha Natalia Aritonang
+# 🧠 Adaptive Computer Network Learning Platform (ADLv2)
 
-📞 081396700208  
-📧 [tanishaartng@gmail.com](mailto:tanishaartng@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a/)  
-📍 Medan, North Sumatera  
+An AI-powered platform that adapts computer networking lessons to each student's proficiency level. The system automatically generates learning materials, assessments, and provides real-time feedback — all stored in Supabase and powered by locally-served AI models via Ollama.
 
----
+## ✨ Overview
 
-## 💡 About Me
-Motivated **Computer Technology student** specializing in **frontend and full-stack web development**.  
-Passionate about building **interactive, user-centric web applications** with scalable and maintainable architecture.  
-Experienced in integrating **AI features** and deploying **modern web apps** using **DevOps** and **cloud technologies**.  
-Strong skills in translating user needs into responsive and efficient interfaces.
+ADLv2 delivers personalized learning paths where students progress through pre-tests → adaptive lessons → practice sessions → post-tests. Instructors can upload content and monitor student progress through an intuitive dashboard. All AI processing happens locally for enhanced privacy and low latency.
 
 ---
 
-## 🎓 Education
+## 📋 Table of Contents
 
-### Institut Teknologi Del – Sitoluama, Laguboti, Toba Samosir  
-📆 _Aug 2023 – Sep 2026 (Expected)_  
-🎯 **Diploma in Computer Engineering** — GPA: **3.80 / 4.00**  
-🏅 **Academic Excellence Scholarship (2023–2024)**  
-Awarded for maintaining a high GPA and outstanding academic performance.
-
-### SMAN 1 Girsang Sipangan Bolon – Parapat  
-📆 _2020 – 2023_  
-**Senior High School, Science Stream**
-
----
-
-## 💼 Work Experiences
-
-### 🧑‍🏫 Institut Teknologi Del — *Matriculation Assistant*  
-📅 _August 2024_  
-- Assisted in facilitating matriculation for ~500 new students.  
-- Supported academic sessions, attendance, and classroom coordination.  
-- Taught introductory programming and digital literacy (Microsoft Word, etc.).
-
-### 🗳️ Institut Teknologi Del — *Vice Chair of KPU HIMATEK*  
-📅 _September 2025_  
-- Assisted the Chair in leading the Election Commission of HIMATEK.  
-- Organized and supervised the student election process.  
-- Ensured fairness, transparency, and documentation integrity.
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Getting Started](#-getting-started)
+- [Database Schema](#-database-schema)
+- [Adaptive Learning Flow](#adaptive-learning-flow)
+- [AI Integration](#-ai-integration)
+- [Development](#-development)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 🏛️ Organization Experience
+## 🚀 Features
 
-### HIMATEK – Institut Teknologi Del  
-**Leader of Education Division** (_Aug 2025 – Present_)  
-- Coordinated training programs, workshops, and academic development.  
-- Designed initiatives to improve technical and academic performance.
+### 👨‍🏫 **Instructor Capabilities**
+- **Module Upload**: Upload text modules on computer networking topics
+- **Automated Content Generation**: AI generates Easy/Medium/High level content with corresponding questions
+- **Dashboard Analytics**: Monitor student progress, test results, and learning outcomes
+- **Content Management**: Review and manage all AI-generated materials
 
-**Leader of Competition Division** (_Aug 2024 – Present_)  
-- Organized technical workshops and collaboration with lecturers.  
-- Mentored junior members and promoted continuous learning.
+### 👨‍🎓 **Student Experience**
+1. **Module Selection**: Choose from AI-generated learning modules
+2. **Pre-Assessment**: 30-question diagnostic test to determine starting level
+3. **Adaptive Lessons**: Receive level-specific learning materials
+4. **Practice Sessions**: Interactive MCQs and short-answer questions with immediate feedback
+5. **Post-Assessment**: Comprehensive test to evaluate mastery
+6. **Performance Summary**: Detailed report on strengths and areas for improvement
 
----
-
-## 🚀 Projects
-
-### 🧠 AI-Supported Adaptive Learning System for Computer Networks (2025)  
-**Role:** Project Manager and AI Developer
-**Tech Stack:** Python, FastAPI, JavaScript, Next.js, Docker, Hugging Face, PyTorch, PostgreSQL  
-- Developed adaptive learning platform using fine-tuned **LLaMA 3.1 8B model**.  
-- Built modular LoRA-based SFT scripts and containerized the system for cloud deployment.
-
-### 💬 Chatbot for Education Platform using Analogy-Based Learning (2024)  
-**Role:** Project Manager and AI Developer  
-**Tech Stack:** OpenAI API, LangChain, Supabase, Docker  
-- Built analogy-driven chatbot with semantic retrieval and contextual reasoning.  
-- Deployed via Docker with a lightweight web interface.
-
-### 🌐 Website on the Use of Analogies in Parent-Child Communication (2024)  
-**Role:** Web Developer  
-**Tech Stack:** WordPress, Elementor  
-- Developed educational site with responsive UI and interactive content.  
-- Optimized usability and content management workflows.
-
-### ⚙️ Infrastructure Automation Project using Ansible (2024)  
-**Role:** Infra & Automation Engineer  
-**Tech Stack:** Ansible, Linux, Bind9, Postfix/Dovecot, HAProxy, Squid Proxy, Bash  
-- Automated multi-server LAN setup including DNS, mail, load balancing, and proxy servers.  
-- Achieved faster provisioning and consistent deployments with reusable playbooks.
-
-### 🔧 Embedded System – Automatic Laundry System (2024)  
-**Role:** Hardware & Firmware Developer  
-**Tech Stack:** Arduino, C/C++, Servo Motor, Rain Sensor, LDR, Relay, DC Fan, LCD  
-- Designed automatic laundry system with weather-adaptive roof and drying fan.
+### 🤖 **AI Integration**
+- **Local Processing**: All AI operations run via Ollama on localhost
+- **Privacy-Focused**: No external API calls or data sharing
+- **Fine-Tuned Model**: Custom-tuned TinyLlama for educational content
+- **Real-Time Feedback**: Instant evaluation of student responses
 
 ---
 
-## 🏅 Achievements & Certifications
+## 🛠️ Tech Stack
 
-- **PILMAPRES 2025** — Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi  
-- **Microsoft Certified:** Azure AI Fundamentals (2025)  
-- **AWS Cloud Practitioner Essentials (2025)**  
-- **AI Agents Fundamentals – Hugging Face (2025)**  
-- **LLM Course Unit 3: Fine-Tuning Language Models – Hugging Face (2025)**  
-- **HCIA-Storage V5.0, HCIA-Datacom V1.0, HCIA-Cloud Computing V5.5 – Huawei (2025)**  
-- **Short Class: UI/UX Design Fundamental – Myskills (2024)**  
-- **Complete Linux Training Course – Udemy (2025)**  
-- **Go Programming Language – Great Learning (2025)**  
-- **Del Debate Competition 2025 – British Parliamentary Debate, UPT Bahasa IT Del (2024)**  
-
----
-
-## 🧰 Skills
-
-### 💻 Hard Skills
-- **Programming & Frameworks:** Python, JavaScript, C, Next.js  
-- **AI & Machine Learning:** LoRA, SFT, Hugging Face, OpenAI API, LangChain, Ollama  
-- **Databases:** Supabase, PostgreSQL, MySQL, Vector DBs, JSON/CSV  
-- **DevOps & Cloud:** Docker, Kubernetes, Terraform, AWS, CI/CD Pipelines  
-- **Web Development:** WordPress (Elementor, PHP), HTML, CSS, REST API  
-- **Tools:** Git, GitHub, Weights & Biases (wandb), Shell Scripting  
-
-### 🤝 Soft Skills
-Analytical Thinking · Problem Solving · Collaboration · Adaptability · Communication · Ownership
+| Component       | Technology                          |
+|-----------------|-------------------------------------|
+| **Frontend**    | Next.js 14 (App Router), React     |
+| **Styling**     | Tailwind CSS, shadcn/ui            |
+| **Backend**     | Next.js API Routes                 |
+| **Database**    | Supabase (PostgreSQL)              |
+| **Authentication** | Supabase Auth                    |
+| **AI Inference** | Ollama (local)                    |
+| **ORM**         | Drizzle ORM                        |
+| **Language**    | TypeScript                         |
 
 ---
 
-🗓️ _Last Updated: December 2025_
+## 🏗️ Architecture
+
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ Frontend │ │ Next.js API │ │ Supabase │
+│ (Next.js) │◄──►│ Routes │◄──►│ (PostgreSQL + │
+│ │ │ │ │ Auth) │
+└─────────────────┘ └─────────┬───────┘ └─────────────────┘
+│
+┌──────▼───────┐
+│ Ollama │
+│ (Local) │
+└──────────────┘
+
+
+---
+
+## 🚦 Getting Started
+
+### Prerequisites
+
+- **Node.js** (18.x or later)
+- **PNPM** (or npm/yarn)
+- **Supabase Account** (or local instance)
+- **Ollama** installed with TinyLlama model
+- **Git**
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/adl-v2.git
+   cd adl-v2
+
+2. **Install dependencies**
+    pnpm install
+
+3. **Set up environment variables**
+    cp .env.example .env.local
+
+    Edit .env.local with your credentials:
+    # Supabase
+    NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+    SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+
+    # Ollama
+    OLLAMA_API_URL=http://localhost:11434/api/generate
+
+    # Next.js
+    NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+4. **Set up the database**
+    - Run the SQL schema from /supabase/migrations in your Supabase SQL editor
+    - Or use the Supabase CLI to apply migrations
+
+5. **Start Ollama**
+     # Ensure Ollama is running with the model
+    ollama serve
+    # In another terminal
+    ollama pull tinyllama
+
+6. **Run the development server**
+    pnpm dev
+    Open http://localhost:3000 in your browser.
+

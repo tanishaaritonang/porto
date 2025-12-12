@@ -95,51 +95,56 @@ const Portfolio = () => {
       period: "2025",
       description: "Developed adaptive learning platform using fine-tuned LLaMA 3.1 8B model. Built modular LoRA-based SFT scripts and containerized the system for cloud deployment.",
       technologies: ["Python", "FastAPI", "JavaScript", "Next.js", "Docker", "Hugging Face", "PyTorch", "PostgreSQL"],
-      link: "https://github.com/tanishaaritonang/ADLv2"
+      link: "https://github.com/tanishaaritonang/ADLv2",
+      thumbnail: "/adl.png"
     },
     {
       title: "End-to-End DevOps Project with GitOps Implementation",
       period: "2025",
       description: "Built production-ready GitOps pipeline for automated Kubernetes deployments. Implemented Infrastructure as Code with Terraform, continuous delivery with ArgoCD, and self-healing mechanisms for high availability.",
       technologies: ["Terraform", "Kubernetes", "ArgoCD", "Helm", "Docker", "Minikube", "Python", "Flask", "GitOps"],
-      link: "https://github.com/tanishaaritonang/end-to-end-devOps"
+      link: "https://github.com/tanishaaritonang/end-to-end-devOps",
+      thumbnail: "/argo.png"
     },
     {
       title: "Chatbot for Education Platform using Analogy-Based Learning",
       period: "2024",
       description: "Built analogy-driven chatbot with semantic retrieval and contextual reasoning. Deployed via Docker with a lightweight web interface.",
       technologies: ["OpenAI API", "LangChain", "Supabase", "Docker"],
-      link: "https://github.com/tanishaaritonang/PA2_Product"
+      link: "https://github.com/tanishaaritonang/PA2_Product",
+      thumbnail: "/chatbot.png"
     },
-    ,
     {
       title: "Infrastructure Automation Project using Ansible",
       period: "2024",
       description: "Automated multi-server LAN setup including DNS, mail, load balancing, and proxy servers. Achieved faster provisioning and consistent deployments with reusable playbooks.",
       technologies: ["Ansible", "Linux", "Bind9", "Postfix/Dovecot", "HAProxy", "Squid Proxy", "Bash"],
-      link: "#"
+      link: "#",
+      thumbnail: "/ansible.png"
     },
     {
       title: "Embedded System – Automatic Laundry System",
       period: "2024",
       description: "Designed automatic laundry system with weather-adaptive roof and drying fan using Arduino, servo motor, rain sensor, LDR, relay, and DC fan.",
       technologies: ["Arduino", "C/C++", "Servo Motor", "Rain Sensor", "LDR", "Relay", "DC Fan", "LCD"],
-      link: "#"
+      link: "#",
+      thumbnail: "/sistan.png"
     },
     {
-
       title: "Genshin Impact Character Viewer",
       period: "2024",
       description: "Built a simple web application for browsing Genshin Impact character information using PHP and JSON data from Paimon.moe.",
       technologies: ["PHP", "CSS", "JSON"],
-      link: "#"
+      link: "https://github.com/D3TeknologiKomputer/quiz-web-api-tanishaaritonang",
+      thumbnail: "/genshin.png"
     },
     {
       title: "Website on the Use of Analogies in Parent-Child Communication",
       period: "2024",
       description: "Developed educational site with responsive UI and interactive content. Optimized usability and content management workflows.",
       technologies: ["WordPress", "Elementor"],
-      link: "#"
+      link: "#",
+      
     }
   ];
 
@@ -576,6 +581,20 @@ const Portfolio = () => {
                           {project.period}
                         </Badge>
                       </div>
+                      {project.thumbnail && (
+                        <div className="mb-3">
+                          <img
+                            src={project.thumbnail}
+                            alt={`${project.title} thumbnail`}
+                            className="w-full h-32 object-cover rounded-md border border-border"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = '/placeholder.jpg'; // fallback placeholder
+                              target.alt = 'Project thumbnail placeholder';
+                            }}
+                          />
+                        </div>
+                      )}
                       <p className="text-foreground text-sm mb-4">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.map((tech, i) => (
@@ -866,7 +885,7 @@ const Portfolio = () => {
       <footer className="py-8 bg-muted-foreground text-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p>© {new Date().getFullYear()} Tanisha Natalia Aritonang. All rights reserved.</p>
-          <p className="text-muted-foreground/70 mt-2">Aspiring Cloud Engineer</p>
+          <p className="text-muted-foreground/70 mt-2">IT Enthusiast</p>
         </div>
       </footer>
     </div>
