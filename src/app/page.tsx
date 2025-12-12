@@ -228,7 +228,114 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <div className="min-h-screen bg-background font-mono relative">
+        <style jsx global>{`
+          @keyframes matrixRain {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+          }
+          .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+          }
+          .matrix-column {
+            position: absolute;
+            top: -100%;
+            width: 20px;
+            height: 100vh;
+            color: rgba(0, 255, 0, 0.7);
+            font-size: 18px;
+            font-family: monospace;
+            text-align: center;
+            animation: matrixRain linear infinite;
+          }
+          .terminal-block {
+            border: 1px solid #4a5568;
+            border-radius: 4px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            color: #22c55e;
+            overflow: auto;
+          }
+          .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 1rem;
+            background-color: #22c55e;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+          }
+          @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+          }
+          @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+          }
+          @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+          }
+          .code-font {
+            font-family: 'Courier New', monospace;
+          }
+          .code-highlight {
+            background-color: rgba(34, 197, 94, 0.1);
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+          }
+          .terminal-title {
+            font-family: 'Courier New', monospace;
+            position: relative;
+            display: inline-block;
+          }
+          .terminal-title::after {
+            content: ' _';
+            animation: blink 1s infinite;
+            color: #22c55e;
+          }
+          .glow-border {
+            animation: pulse-glow 2s infinite;
+          }
+          .floating-element {
+            animation: float 3s ease-in-out infinite;
+          }
+          .glow-on-hover {
+            transition: all 0.3s ease;
+          }
+          .glow-on-hover:hover {
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.7);
+          }
+        `}</style>
+        <div className="matrix-bg">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="matrix-column"
+              style={{
+                left: `${i * 5}%`,
+                animationDuration: `${15 + Math.random() * 10}s`,
+                animationDelay: `${Math.random() * 5}s`,
+                opacity: 0.3 + Math.random() * 0.4
+              }}
+            >
+              {Array.from({ length: 30 }).map((_, j) => (
+                <div key={j}>01</div>
+              ))}
+            </div>
+          ))}
+        </div>
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border" role="navigation" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -336,15 +443,15 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 code-font glow-on-hover"
               >
-                {profile.name}
+                {profile.name}<span className="cursor-blink"></span>
               </motion.h1>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-xl md:text-2xl text-blue-600 mb-6"
+                className="text-xl md:text-2xl text-blue-600 mb-6 code-font font-mono"
               >
                 {profile.title}
               </motion.h2>
@@ -363,17 +470,17 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="flex flex-wrap gap-4"
               >
-                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-blue-600 active:bg-blue-700 dark:hover:bg-blue-400 dark:active:bg-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <a href={`mailto:${profile.email}`} className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-blue-600 active:bg-blue-700 dark:hover:bg-blue-400 dark:active:bg-blue-500 px-4 py-2 rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 glow-on-hover">
                   <Mail size={20} aria-hidden="true" />
                   Contact Me
                 </a>
-                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-md text-sm font-medium transition-colors glow-on-hover">
                   <Linkedin size={20} aria-hidden="true" />
                   LinkedIn
                 </a>
-                <a href="/cv.pdf" download="Tanisha_Natalia_Aritonang_CV.pdf" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <a href="https://drive.google.com/file/d/1AuWjN1VedDwigl7GM_B24m3Y4IfXYbca/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 glow-on-hover">
                   <Download size={20} aria-hidden="true" />
-                  Download CV
+                  View CV
                 </a>
               </motion.div>
             </motion.div>
@@ -385,26 +492,29 @@ const Portfolio = () => {
               aria-label={`${profile.name}'s profile picture`}
             >
               <div className="relative">
-                <Avatar
-                  src="/foto.jpeg"
-                  alt={`${profile.name}'s profile picture`}
-                  className="w-64 h-64 md:w-80 md:h-80"
-                >
-                  <AvatarFallback>
-                    <div className="bg-muted w-full h-full rounded-full flex items-center justify-center">
-                      <span className="text-5xl text-muted-foreground">TNA</span>
-                    </div>
-                  </AvatarFallback>
-                </Avatar>
+                <div className="relative group">
+                  <Avatar
+                    src="/tanisha.png"
+                    alt={`${profile.name}'s profile picture`}
+                    className="w-64 h-64 md:w-80 md:h-80"
+                  >
+                    <AvatarFallback>
+                      <div className="bg-muted w-full h-full rounded-full flex items-center justify-center">
+                        <span className="text-5xl text-muted-foreground">TNA</span>
+                      </div>
+                    </AvatarFallback>
+                  </Avatar>
 
-                <motion.div
-                  className="absolute -bottom-2 -right-2 bg-blue-600 rounded-full p-2"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ repeat: Infinity, duration: 2 }}
-                  aria-label="Online status indicator"
-                >
-                  <div className="w-6 h-6 bg-green-400 rounded-full animate-pulse" aria-hidden="true"></div>
-                </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                    <h3 className="text-white text-lg font-mono font-bold text-center w-full terminal-title">
+                      {profile.name}
+                    </h3>
+                  </div>
+
+                  <div className="absolute -bottom-2 -right-2 bg-blue-600 rounded-full p-2">
+                    <div className="w-6 h-6 bg-green-400 rounded-full animate-pulse" aria-hidden="true"></div>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -420,7 +530,7 @@ const Portfolio = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <h2 className="text-3xl font-bold text-foreground">About Me</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* About Me */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -468,7 +578,7 @@ const Portfolio = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className="text-primary" size={32} />
-              <h2 className="text-3xl font-bold text-foreground">Experience</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* Experience */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
             <div className="space-y-8">
@@ -515,7 +625,7 @@ const Portfolio = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Briefcase className="text-primary" size={32} />
-              <h2 className="text-3xl font-bold text-foreground">Organization Experience</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* Organization Experience */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
             <div className="space-y-8">
@@ -562,7 +672,7 @@ const Portfolio = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Code className="text-primary" size={32} />
-              <h2 className="text-3xl font-bold text-foreground">Projects</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* Projects */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -573,7 +683,7 @@ const Portfolio = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover:shadow-md transition-shadow">
+                  <Card className="h-full hover:shadow-md transition-shadow glow-on-hover">
                     <CardContent className="p-6">
                       <div className="flex justify-between items-start mb-3">
                         <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
@@ -634,7 +744,7 @@ const Portfolio = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <Award className="text-primary" size={32} />
-              <h2 className="text-3xl font-bold text-foreground">Skills</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* Skills */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
 
@@ -725,7 +835,7 @@ const Portfolio = () => {
           >
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="text-primary" size={32} />
-              <h2 className="text-3xl font-bold text-foreground">Education</h2>
+              <h2 className="text-3xl font-bold text-foreground terminal-title">/* Education */</h2>
               <div className="h-px bg-border flex-grow"></div>
             </div>
             <div className="space-y-6">
@@ -780,7 +890,7 @@ const Portfolio = () => {
             className="bg-card rounded-2xl shadow-xl p-8 md:p-12"
           >
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-foreground mb-2">Get In Touch</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-2 terminal-title">/* Get In Touch */</h2>
               <p className="text-muted-foreground max-w-md mx-auto">
                 Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
               </p>
@@ -889,6 +999,7 @@ const Portfolio = () => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
