@@ -11,5 +11,6 @@ export {
   ChevronDown,
   Download,
   Github,
+  Instagram,
   ExternalLink
 } from 'lucide-react';

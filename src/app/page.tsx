@@ -12,7 +12,9 @@ import {
   Code,
   Award,
   ExternalLink,
-  Download
+  Download,
+  Github,
+  Instagram
 } from '../components/icons';
 import { Button } from '../components/button';
 import { Card, CardContent } from '../components/card';
@@ -31,7 +33,9 @@ const Portfolio = () => {
     email: "tanishaartng@gmail.com",
     location: "Medan, North Sumatera",
     linkedin: "https://www.linkedin.com/in/tanisha-natalia-aritonang-99763a26a",
-    phone: "081396700208"
+    phone: "081396700208",
+    instagram: "https://instagram.com/tanishanaart",
+    github: "https://github.com/tanishaaritonang"
   };
 
   const experiences = [
@@ -57,7 +61,7 @@ const Portfolio = () => {
   },
   {
     title: "PILMAPRES Participant",
-    company: "Institut Teknologi Del",
+    company: "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
     period: "2024 / 2025",
     description: [
       "Selected as a representative for the campus in the PILMAPRES competition.",
@@ -419,9 +423,7 @@ const Portfolio = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-lg text-foreground mb-8 max-w-lg"
               >
-                Motivated Computer Technology student specializing in cloud computing, IT infrastructure, and Software Development.
-                Passionate about designing and managing scalable, secure, and efficient cloud-based systems and applications.
-                Hands-on experience with cloud platforms, DevOps tools, and AI integration to optimize modern infrastructure solutions.              </motion.p>
+                           </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -435,6 +437,14 @@ const Portfolio = () => {
                 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 rounded-md text-sm font-medium transition-colors glow-on-hover">
                   <Linkedin size={20} aria-hidden="true" />
                   LinkedIn
+                </a>
+                <a href={profile.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 glow-on-hover">
+                  <Github size={20} aria-hidden="true" />
+                  GitHub
+                </a>
+                <a href={profile.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 glow-on-hover">
+                  <Instagram size={20} aria-hidden="true" />
+                  Instagram
                 </a>
                 <a href="https://drive.google.com/file/d/1AuWjN1VedDwigl7GM_B24m3Y4IfXYbca/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 glow-on-hover">
                   <Download size={20} aria-hidden="true" />
